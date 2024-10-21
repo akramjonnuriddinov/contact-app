@@ -3,6 +3,8 @@ import TheHeader from '@/components/TheHeader.vue'
 </script>
 
 <template>
-  <TheHeader />
-  <RouterView />
+  <div class="min-h-screen flex flex-col">
+    <TheHeader />
+    <RouterView />
+  </div>
 </template>
