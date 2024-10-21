@@ -19,7 +19,7 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('@/pages/AddContact.vue')
+        component: () => import('@/pages/AddView.vue')
       }
     ]
   }
