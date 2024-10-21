@@ -1,10 +1,5 @@
-<script setup lang="ts">
-import TheHeader from '@/components/TheHeader.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="min-h-screen flex flex-col">
-    <TheHeader />
-    <RouterView />
-  </div>
+  <RouterView />
 </template>

@@ -16,10 +16,11 @@ import { PlusIcon } from '@heroicons/vue/24/outline'
     <span class="opacity-40 w-full text-center font-medium text-black"
       >You have no contacts
     </span>
-    <button
+    <router-link
+      to="/add"
       class="bg-blue-400 absolute bottom-7 right-10 w-16 h-16 flex items-center justify-center rounded-full text-white"
     >
       <PlusIcon class="w-6" />
-    </button>
+    </router-link>
   </AppContainer>
 </template>
