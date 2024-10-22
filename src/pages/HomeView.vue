@@ -49,10 +49,18 @@ onMounted(fetchContacts)
       <PlusIcon class="w-6" />
     </router-link>
   </AppContainer>
-  <AppContainer v-else>
+  <AppContainer v-else class="relative">
     <ul class="py-10 flex flex-col">
-      <li v-for="contact in contacts" :key="contact.id" class="p-1">
-        <RouterLink to="/" class="flex items-center">
+      <li v-for="contact in contacts" :key="contact.id" class="p-1 mb-2">
+        <RouterLink
+          :to="{
+            name: 'edit',
+            params: {
+              id: contact.id,
+            },
+          }"
+          class="flex items-center"
+        >
           <div
             class="w-[42px] h-[42px] mr-3 bg-[#7B7B7B] text-white rounded-full flex items-center justify-center"
           >
@@ -71,7 +79,7 @@ onMounted(fetchContacts)
     </ul>
     <router-link
       to="/add"
-      class="bg-blue-400 absolute bottom-7 right-10 w-16 h-16 flex items-center justify-center rounded-full text-white"
+      class="bg-blue-400 fixed bottom-7 right-10 w-16 h-16 flex items-center justify-center rounded-full text-white"
     >
       <PlusIcon class="w-6" />
     </router-link>
