@@ -8,15 +8,18 @@ import { getContacts } from '../api/contactService'
 const contacts = ref<Contact[]>([])
 const loading = ref(true)
 const error = ref<string | null>(null)
+const len = ref(0)
 
 const fetchContacts = async () => {
   try {
     contacts.value = await getContacts()
   } catch (err) {
     error.value = 'Failed to load contacts'
+    len.value = 0
     console.error(err)
   } finally {
     loading.value = false
+    len.value = contacts.value?.length || 0
   }
 }
 
@@ -25,7 +28,7 @@ onMounted(fetchContacts)
 
 <template>
   <AppContainer
-    v-if="contacts.length == 0"
+    v-if="len == 0"
     class="flex relative h-full items-center justify-center flex-col flex-grow"
   >
     <img
@@ -69,7 +72,7 @@ onMounted(fetchContacts)
           <div class="flex flex-col">
             <span
               class="mb-1 font-medium whitespace-nowrap text-ellipsis overflow-hidden w-[165px]"
-              >{{ contact.name }}</span
+              >{{ contact.name }} | {{ contact.email }}</span
             >
             <span class="text-[#8B8B8B] text-[14px]">{{ contact.phone }}</span>
           </div>
