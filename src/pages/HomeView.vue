@@ -3,9 +3,8 @@ import { PlusIcon } from '@heroicons/vue/24/outline'
 import { UserIcon, PhoneIcon } from '@heroicons/vue/24/solid'
 import { ref, onMounted } from 'vue'
 import { Contact } from '../types/contacts'
-import { getContacts } from '@/api/contactService'
+import { getContacts } from '../api/contactService'
 
-const isEmpty = ref(true)
 const contacts = ref<Contact[]>([])
 const loading = ref(true)
 const error = ref<string | null>(null)

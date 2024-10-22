@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import AppContainer from '@/components/AppContainer.vue'
 import { CheckIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline'
+import { useContactStore } from '../stores/contactStore'
+
+const contactStore = useContactStore()
 </script>
 
 <template>
@@ -11,7 +14,7 @@ import { CheckIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline'
           <ArrowLeftIcon class="w-6" />
         </router-link>
         <span class="font-medium text-xl">Add</span>
-        <button class="ml-auto">
+        <button @click="contactStore.submitContactForm" class="ml-auto">
           <CheckIcon class="w-6" />
         </button>
       </div>

@@ -4,3 +4,9 @@ export interface Contact {
   email: string
   phone: string
 }
+
+export interface AddContactPayload {
+  name: string
+  email: string
+  phone: string
+}
