@@ -9,9 +9,9 @@ const routes = [
     children: [
       {
         path: '',
-        component: HomeView
-      }
-    ]
+        component: HomeView,
+      },
+    ],
   },
   {
     path: '/add',
@@ -19,10 +19,10 @@ const routes = [
     children: [
       {
         path: '',
-        component: () => import('@/pages/AddView.vue')
-      }
-    ]
-  }
+        component: () => import('@/pages/AddView.vue'),
+      },
+    ],
+  },
 ]
 
 const router = createRouter({
