@@ -47,6 +47,6 @@ export const useContactStore = defineStore('contactStore', () => {
     contact,
     loading,
     submitContactForm,
-    updateContactForm
+    updateContactForm,
   }
 })

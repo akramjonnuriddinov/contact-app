@@ -41,10 +41,6 @@ onMounted(fetchContacts)
     <span class="opacity-40 w-full text-center font-medium text-black"
       >You have no contacts
     </span>
-    <div>
-      <div v-if="loading">Loading...</div>
-      <div v-else>{{ contacts }}</div>
-    </div>
     <router-link
       to="/add"
       class="bg-blue-400 absolute bottom-7 right-10 w-16 h-16 flex items-center justify-center rounded-full text-white"
